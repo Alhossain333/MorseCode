@@ -18,19 +18,21 @@ Morse_code_mapping = {'A': '.-', 'B': '-...',
 
 
 def encrypt(plain_message):
+    # plain_message.upper convert all charecters to upper case
     plain_message = plain_message.upper()
     encryptedMessage = []
     for plainChar in plain_message:
         if plainChar in Morse_code_mapping:
             morseCode = Morse_code_mapping.get(plainChar)
             encryptedMessage.append(morseCode)
-
+    # convert encryptedMessage array into string
     encryptedMessegeString = ' '.join(encryptedMessage)
     print(encryptedMessegeString)
     return encryptedMessegeString
 
 
 def decrypt(encrypted_message):
+    # convert encrypted_message string into array
     morse_codes = encrypted_message.split(' ')
     decrypted_message = []
     for code in morse_codes:
