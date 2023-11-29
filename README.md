@@ -37,3 +37,21 @@ from MorseCode import decrypt
 encrypted_message = "... --- ..."
 decrypted_message = decrypt(encrypted_message)
 print(decrypted_message)
+
+```
+
+## Unit Tests
+
+| Test Case                             | Input Message                         | Expected Output                                                      |
+|----------------------------------------|---------------------------------------|----------------------------------------------------------------------|
+| test_encryption_single_word            | `ALHOSSAIN`                          | `.‐ .‐.. .... --- ... ... .‐ .. ‐.`                                  |
+| test_encryption_multiple_words         | `ALHOSSAIN HABIBI WEH REGOULA`       | `.‐ .‐.. .... --- ... ... .‐ .. ‐. / .... .‐ ‐... .. ‐... .. / ...‐ . .... / .-. . ‐‐. --- ..- .-.. .‐` |
+| test_encryption_single_word_with_numbers| `ALHOSSAIN333`                       | `.‐ .‐.. .... --- ... ... .‐ .. ‐. ...‐ ...‐ ...‐`              |
+| test_encryption_single_word_with_space_and_numbers | `ALHOSSAIN333 456`          | `.‐ .‐.. .... --- ... ... .‐ .. ‐. ...‐ ...‐ ...‐ / ....‐ ..... ‐....`          |
+| test_encryption_single_word_lowercase  | `alhossain`                          | `.‐ .‐.. .... --- ... ... .‐ .. ‐.`                                  |
+| test_encryption_combination            | `ALHOSSAIN habibi WEH REGOULA333 456` | `.‐ .‐.. .... --- ... ... .‐ .. ‐. / .... .‐ ‐... .. ‐... .. / .‐‐ ‐.... / .-. . ‐‐. --- ..- .-.. .‐ ...‐ ...‐ ...‐ / ....‐ ..... ‐....` |
+| test_decrypt_numbers                   | `.---- ..--- ...-- ....- .....`      | `12345`                                                              |
+| test_decrypt_special_characters        | `!@#$%`                               | ``                                                                   |
+| test_decrypt_single_word               | `.... . .‐.. .‐.. ‐‐‐`                | `HELLO`                                                              |
+| test_decrypt_multiple_words            | `.‐ .‐.. .... --- ... ... .‐ .. ‐. / .‐‐‐ --- .-. .‐.. ‐..` | `ALHOSSAIN WORLD`                                       |
+| test_decrypt_lowercase                 | `.... . .‐.. .‐.. ‐‐‐`                | `HELLO`                                                              |
